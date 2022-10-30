@@ -16,4 +16,13 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - run: echo "Hello world from the first github actions pipeline"
+    - run: docker-compose -f docker-compose-build.yaml build --parallel
+    - run: docker tag reverseproxy emmerick1997/reverseproxy:v1
+    - run: docker tag backend-feed emmerick1997/backend-feed:v1
+    - run: docker tag backend-user emmerick1997/backend-user:v1
+    - run: docker tag udagram-frontend emmerick1997/udagram-frontend:v1
+    - run: echo "${{ secrets.DOCKER_PASSWORD}}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
+    - run: docker push emmerick1997/reverseproxy:v1
+    - run: docker push emmerick1997/backend-feed:v1
+    - run: docker push emmerick1997/backend-user:v1
+    - run: docker push emmerick1997/udagram-frontend:v1
