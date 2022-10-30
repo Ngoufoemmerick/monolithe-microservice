@@ -25,4 +25,4 @@ jobs:
     - run: docker push emmerick1997/reverseproxy:v1
     - run: docker push emmerick1997/backend-feed:v1
     - run: docker push emmerick1997/backend-user:v1
-    - run: docker push emmerick1997/udagram-frontend:local:v1
+    - run: docker push emmerick1997/udagram-frontend:v1
