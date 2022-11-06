@@ -3,7 +3,7 @@ kind: ConfigMap
 metadata:
   name: env-configmap
 data:
-  POSTGRES_HOST: "udagram-instance.cahedyejsspr.us-east-1.rds.amazonaws.com"
+  POSTGRES_HOST: "udagram-instance.cavelgfsqnpd.us-east-1.rds.amazonaws.com"
   POSTGRES_DB: udagram_db
   AWS_BUCKET: udagram-bucket-instagram
   AWS_REGION: us-east-1
